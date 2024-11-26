@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create a New Post</h1>
+
+        <form method="post" action="/submit">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="name" name="author" 
+                    placeholder="Enter your name" value="<%= data.author %>">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="blog" name="title"
+                        placeholder="Enter the title of your blog" value="<%= data.title %>">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="content" name="content"
+                    placeholder="Write your blog here" value="<%= data.content %>">
+                </div>
+            </div>
+            <% if (errors) { %>
+                <ul class="errors">
+                    <% errors.forEach((error) => { %>
+                        <li><%= error %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+            <div class="button-container">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

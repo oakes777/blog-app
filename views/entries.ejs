@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entries</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+<div class="container">
+    <% if (data.length != 0) { %>
+    <% for (let i=0; i < data.length; i++) { %>
+        <div>
+            <h1><%= data[i].title %></h1>
+            <p><%= data[i].content %></p>
+            <p>Author: <%= data[i].author %></p>
+        </div>
+    <% }} else { %>
+        <h1>No data Found</h1>
+    <% } %>
+</div>
+</body>
+
+</html>
