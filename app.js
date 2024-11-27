@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 const pool = mariadb.createPool({
     host: 'localhost',
     user: 'root',
-    password: '0508',
+    password: 'sule',
     database: 'blog'
 });
 
@@ -30,7 +30,6 @@ async function connect() {
 }
 
 app.get('/', (req, res) => {
-    console.log("Hello, world! - server");
     res.render('home', { data: {}, errors: []});
 });
 
